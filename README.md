@@ -7,7 +7,6 @@ Mason:
 
 Elle:
 - code FAQ page
-- code contact info page
 
 
 Qays:
