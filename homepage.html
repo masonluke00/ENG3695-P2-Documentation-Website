@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xbox Series X - Home Page</title>
+    <title>Home</title>
     <style>
         * {
             margin: 0;
@@ -32,6 +32,10 @@
         .nav-bar a:hover {
             background: #777;
         }
+        .nav-bar a.active {
+            background: #ab8275;;
+            color: white;
+        }
         .image-container {
             margin: 20px auto;
         }
@@ -49,7 +53,7 @@
             border-radius: 10px;
         }
         .contact-box {
-            position: absolute;
+            position: fixed;
             bottom: 20px;
             left: 20px;
             width: 200px;
@@ -61,15 +65,23 @@
     </style>
 </head>
 <body>
-
     <!-- Navigation Bar -->
     <div class="nav-bar">
-        <a href="homepage.html">Home Page</a>
-        <a href="userguide.html">User Guide</a>
-        <a href="faqs.html">FAQs</a>
-        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="homepage.html" class="nav-link active">Home Page</a>
+        <a href="userguide.html" class="nav-link">User     Guide</a>
+        <a href="faqs.html" class="nav-link">FAQs</a>
+        <a href="troubleshooting.html" class="nav-link">Troubleshooting</a>
     </div>
+    <script>
+        const currentPage = window.location.pathname.split('/').pop();
+        const navLinks = document.querySelectorAll('.nav-link');
 
+        navLinks.forEach(link => {
+            if (link.href.includes(currentPage)) {
+                link.classList.add('active');
+            }
+        });
+    </script>
     <!-- Centered Image -->
     <div class="image-container">
         <img src="https://s.yimg.com/ny/api/res/1.2/auShiKSb79ebV5DW6dgHLA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNw--/https://s.yimg.com/os/creatr-uploaded-images/2020-11/00ab1e70-1f19-11eb-bbfb-6d1c65d2b15f" alt="Xbox Series X Gaming Console">
