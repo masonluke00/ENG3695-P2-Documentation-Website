@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xbox Series X - Troubleshooting</title>
+    <title>Troubleshooting</title>
     <style>
         * {
             margin: 0;
@@ -32,18 +32,11 @@
         .nav-bar a:hover {
             background: #777;
         }
-        .content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 300px;
-            border: 2px solid #ccc;
-            margin: 20px;
+        .nav-bar a.active {
+            background: #ab8275;
+            color: white;
         }
         .troubleshooting {
-            /* border: 1px solid #ccc;
-            padding: 20px;
-            margin: 20px; */
             width: 60%;
             margin: 20px auto;
             padding: 20px;
@@ -55,8 +48,8 @@
             margin: 20px auto;
         }
         .image-container img {
-            width: 70%;
-            max-width: 700px;
+            width: 50%;
+            max-width: 500px;
             border-radius: 10px;
         }
         .contact-box {
@@ -72,13 +65,24 @@
     </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
     <div class="nav-bar">
-        <a href="homepage.html">Home Page</a>
-        <a href="userguide.html">User Guide</a>
-        <a href="faqs.html">FAQs</a>
-        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="index.html" class="nav-link">Home Page</a>
+        <a href="userguide.html" class="nav-link">User    Guide</a>
+        <a href="faqs.html" class="nav-link">FAQs</a>
+        <a href="troubleshooting.html" class="nav-link active">Troubleshooting</a>
     </div>
+    <script>
+        const currentPage = window.location.pathname.split('/').pop();
+        const navLinks = document.querySelectorAll('.nav-link');
 
+        navLinks.forEach(link => {
+            if (link.href.includes(currentPage)) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+    <!-- Troubleshooting Section -->
     <div class="troubleshooting">
         <h2 style="margin-bottom: 15px;">Overview:</h2>
         <p style="margin-bottom: 20px;">Welcome to the Xbox Series X Troubleshooting Guide. This page provides solutions to help you address common issues that may arise while using your console. Whether you're having problems with setup, gameplay, connectivity, or system errors, the following sections will guide you to the right steps to resolve your concerns.
@@ -123,7 +127,7 @@
         <p style="margin-bottom: 20px;">Check that the HDMI cable is securely connected between the Xbox Series X and the TV.
             <br> Ensure the TV is set to the correct HDMI input.
             <br> Try a different HDMI port on the TV.
-            <br> Confirm the TV supports 4K if you’re using a 4K display, and make sure your HDMI cable is HDMI 2.1 for the best performance.
+            <br> Confirm the TV supports 4K if you are using a 4K display, and make sure your HDMI cable is HDMI 2.1 for the best performance.
             <br> If using HDR, make sure the HDR settings on both the Xbox and TV are enabled.
             <br> Restart both the Xbox Series X and TV.
         </p>

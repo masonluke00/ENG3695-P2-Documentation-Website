@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xbox Series X - User Guide</title>
+    <title>User Guide</title>
     <style>
         * {
             margin: 0;
@@ -32,18 +32,11 @@
         .nav-bar a:hover {
             background: #777;
         }
-        .content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 300px;
-            border: 2px solid #ccc;
-            margin: 20px;
+        .nav-bar a.active {
+            background: #ab8275;
+            color: white;
         }
-        .steps {
-            /* border: 1px solid #ccc;
-            padding: 20px;
-            margin: 20px; */
+        .userguide {
             width: 60%;
             margin: 20px auto;
             padding: 20px;
@@ -55,8 +48,8 @@
             margin: 20px auto;
         }
         .image-container img {
-            width: 70%;
-            max-width: 700px;
+            width: 50%;
+            max-width: 500px;
             border-radius: 10px;
         }
         .contact-box {
@@ -69,16 +62,35 @@
             border-radius: 5px;
             text-align: left;
         }
+        .steps {
+            width: 60%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
-
+    <!-- Navigation Bar -->
     <div class="nav-bar">
-        <a href="homepage.html">Home Page</a>
-        <a href="userguide.html">User Guide</a>
-        <a href="faqs.html">FAQs</a>
-        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="homepage.html" class="nav-link">Home Page</a>
+        <a href="userguide.html" class="nav-link active">User     Guide</a>
+        <a href="faqs.html" class="nav-link">FAQs</a>
+        <a href="troubleshooting.html" class="nav-link">Troubleshooting</a>
     </div>
+    <script>
+        const currentPage = window.location.pathname.split('/').pop();
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        navLinks.forEach(link => {
+            if (link.href.includes(currentPage)) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+<body>
 
     <div class="steps">
         <h2 style="margin-bottom: 15px;">Overview:</h2>

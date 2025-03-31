@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-</head>
-<!DOCTYPE html>
-<html lang="en">
-<head>
     <style>
         * {
             margin: 0;
@@ -36,6 +32,10 @@
         .nav-bar a:hover {
             background: #777;
         }
+        .nav-bar a.active {
+            background: #ab8275;;
+            color: white;
+        }
         .image-container {
             margin: 20px auto;
         }
@@ -53,7 +53,7 @@
             border-radius: 10px;
         }
         .contact-box {
-            position: absolute;
+            position: fixed;
             bottom: 20px;
             left: 20px;
             width: 200px;
@@ -65,45 +65,37 @@
     </style>
 </head>
 <body>
-
     <!-- Navigation Bar -->
     <div class="nav-bar">
-        <a href="index.html">Home Page</a>
-        <a href="userguide.html">User Guide</a>
-        <a href="faqs.html">FAQs</a>
-        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="index.html" class="nav-link">Home Page</a>
+        <a href="userguide.html" class="nav-link">User   Guide</a>
+        <a href="faqs.html" class="nav-link">FAQs</a>
+        <a href="troubleshooting.html" class="nav-link">Troubleshooting</a>
     </div>
+    <script>
+        const currentPage = window.location.pathname.split('/').pop();
+        const navLinks = document.querySelectorAll('.nav-link');
 
+        navLinks.forEach(link => {
+            if (link.href.includes(currentPage)) {
+                link.classList.add('active');
+            }
+        });
+    </script>
     <!-- Centered Image -->
     <div class="image-container">
         <img src="https://s.yimg.com/ny/api/res/1.2/auShiKSb79ebV5DW6dgHLA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNw--/https://s.yimg.com/os/creatr-uploaded-images/2020-11/00ab1e70-1f19-11eb-bbfb-6d1c65d2b15f" alt="Xbox Series X Gaming Console">
     </div>
-
     <!-- Description Box -->
     <div class="description-box">
         <h2>Description of Xbox Series X</h2>
         <p>The Xbox Series X is a gaming console made by Microsoft, and is the successor to the Xbox One X. The console supports 8K video output and 120 FPS making for smooth graphics and a truly immersive gaming experience. The controller, which will feel familiar in the hands of previous generation Xbox owners, is more ergonomic than ever and new users will feel right at home using it. If you want to take a break from games, with the Xbox Series X, you can surf the web, download applications from the App store, or stream movies. Suitable for all ages, this console is bound for you to enjoy and have a great time.</p>
     </div>
-
     <!-- Contact Information -->
     <div class="contact-box">
         <h3>Contact</h3>
         <p>Email: example@email.com</p>
         <p>Phone: 123-456-7890</p>
     </div>
-
-</body>
-</html>
-
-<body>
-    <nav>
-        <ul>
-            <li><a href="faqs.html">FAQS</a></li>
-            <li><a class="active" href="index.html">Home Page</a></li>
-            <li><a href="troubleshooting.html">Troubleshooting</a></li>
-            <li><a href="userguide.html">User  Guide</a></li>
-        </ul>
-    </nav>
-    <!-- Rest of the content -->
 </body>
 </html>
