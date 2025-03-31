@@ -4,100 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-        body {
-            background-color: #f4f4f4;
-            text-align: center;
-            padding: 20px;
-        }
-        .nav-bar {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            background: #333;
-            padding: 15px;
-        }
-        .nav-bar a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            background: #555;
-            border-radius: 5px;
-        }
-        .nav-bar a:hover {
-            background: #777;
-        }
-        .nav-bar a.active {
-            background: #ab8275;
-            color: white;
-        }
-        .image-container {
-            margin: 20px auto;
-        }
-        .image-container img {
-            width: 80%;
-            max-width: 500px;
-            border-radius: 10px;
-        }
-        .image-description {
-            margin-top: 10px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-        .description-box {
-            width: 90%;
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            text-align: left;
-        }
-        .description-box h2 {
-            text-align: center;
-        }
-        .description-box p {
-            line-height: 1.6;
-            text-align: justify;
-        }
-        .contact-box {
-            width: 200px;
-            padding: 10px;
-            background: #ddd;
-            border-radius: 5px;
-            text-align: left;
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-        }
-        /* Screen Size adjustment */
-        @media (max-width: 600px) {
-            .nav-bar {
-                flex-direction: column;
-                align-items: center;
-            }
-            .image-container img {
-                width: 100%;
-            }
-            .description-box {
-                width: 95%;
-            }
-            .contact-box {
-                position: static;
-                width: 90%;
-                margin: 20px auto;
-                text-align: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -126,7 +33,7 @@
     </div>
 
     <!-- Description Box -->
-    <div class="description-box">
+    <div class="description-box-home">
         <h2>Description of Xbox Series X</h2>
         <p>
             The Xbox Series X is a gaming console made by Microsoft, and is the successor to the Xbox One X. The console supports 8K video output and 120 FPS, making for smooth graphics and a truly immersive gaming experience. 
